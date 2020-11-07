@@ -8,6 +8,7 @@ public class ProjectTtsApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(ProjectTtsApplication.class, args);
+                System.out.println("Program is running");
 	}
 
 }
