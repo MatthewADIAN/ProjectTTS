@@ -1,0 +1,39 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package com.TTS.ProjectTTS.services;
+
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
+import com.TTS.ProjectTTS.entities.Contact;
+import java.util.HashMap;
+import java.util.Map;
+/**
+ *
+ * @author USER
+ */
+@Service
+public class ContactService {
+
+    @Autowired
+    RestTemplate restTemplate;
+    @Value("${api.uri}")
+    private String uri;
+    
+    public Contact getById(String id) {
+        Contact result;
+        Map<String, String> param = new HashMap<>();
+        param.put("id", id);
+        result = restTemplate.getForObject(uri + "/profile/contact/{id}", Contact.class, param);
+        return result;
+    }
+
+}

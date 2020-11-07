@@ -20,7 +20,7 @@ import com.TTS.ProjectTTS.entities.Register;
  * @author USER
  */
 @Service
-public class TtsService {
+public class RegisterService {
 
     @Autowired
     RestTemplate restTemplate;

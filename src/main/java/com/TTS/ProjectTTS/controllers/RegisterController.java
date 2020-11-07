@@ -5,7 +5,7 @@
  */
 package com.TTS.ProjectTTS.controllers;
 
-import com.TTS.ProjectTTS.services.TtsService;
+import com.TTS.ProjectTTS.services.RegisterService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -17,9 +17,9 @@ import org.springframework.web.bind.annotation.GetMapping;
  * @author USER
  */
 @Controller
-public class TtsController {
+public class RegisterController {
     @Autowired
-    TtsService service;
+    RegisterService service;
     
     @GetMapping("")
     public String index(Model model){
