@@ -28,10 +28,9 @@ public class TtsService {
     private String uri;
 
     public Boolean register(Register register) {
-        Boolean result;
+        Boolean result = true;
         try {
             restTemplate.postForObject(uri + "/register", register, Register.class);
-            result = true;
         } catch (Exception e) {
             result = false;
         }

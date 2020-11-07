@@ -6,11 +6,26 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>Register</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <h1>Hello World</h1>
+        <form th:object="${user}" th:action="@{register}" method="POST">
+            Birth Date : <input type="text" th:field="*{birthDate}" id="ID"/><br>
+            Current Company : <input type="text" th:field="*{currentCompany}" id="ID"/><br>
+            Degree : <input type="text" th:field="*{degree}" id="ID"/><br>
+            Email : <input type="text" th:field="*{email}" id="ID"/><br>
+            Gender : <input type="text" th:field="*{gender}" id="ID"/><br>
+            Job : <input type="text" th:field="*{job}" id="ID"/><br>
+            Major : <input type="text" th:field="*{major}" id="ID"/><br>
+            Name : <input type="text" th:field="*{name}" id="ID"/><br>
+            Password : <input type="password" th:field="*{password}" id="ID"/><br>
+            Phone : <input type="text" th:field="*{phone}" id="ID"/><br>
+            Status : <input type="text" th:field="*{status}" id="ID"/><br>
+            University : <input type="text" th:field="*{university}" id="ID"/><br>
+            Username : <input type="text" th:field="*{username}" id="ID"/><br>
+            <input type="submit" value="Register" name="Register" />
+        </form>
     </body>
 </html>
