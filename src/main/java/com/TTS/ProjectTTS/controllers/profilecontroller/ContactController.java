@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.TTS.ProjectTTS.controllers;
+package com.TTS.ProjectTTS.controllers.profilecontroller;
 
 import com.TTS.ProjectTTS.entities.Register;
-import com.TTS.ProjectTTS.services.RegisterService;
+import com.TTS.ProjectTTS.services.userservices.RegisterService;
 import com.TTS.ProjectTTS.entities.Contact;
-import com.TTS.ProjectTTS.services.ContactService;
+import com.TTS.ProjectTTS.services.profileservices.ContactService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -27,11 +27,10 @@ public class ContactController {
     @Autowired
     ContactService service;
     
-    
-    public String index(){
-        //model.addAttribute("people",service.getGender("Matthew"));
-        System.out.println("Sukses");
-        return "index";
+    @GetMapping("/{id}")
+    public String index(Model model, @PathVariable("id") String id){
+        model.addAttribute("contact",service.getById(id));
+        return "contact";
     }
     
     /*

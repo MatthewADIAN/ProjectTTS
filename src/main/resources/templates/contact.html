@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Contact</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <table border="1">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>PHONE</th>
+                        <th>INSTAGRAM</th>
+                        <th>LINKEDIN</th>
+                        <th>FACEBOOK</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="as : ${contact}">
+                        <td th:text="${as.id}"></td>
+                        <td th:text="${as.phone}"></td>
+                        <td th:text="${as.instagram}"></td>
+                        <td th:text="${as.linkedin}"></td>
+                        <td th:text="${as.facebook}"></td>
+                    </tr>
+                </tbody>
+            </table>
+    </body>
+</html>
