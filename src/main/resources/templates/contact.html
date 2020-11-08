@@ -11,25 +11,37 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
+
+        <form th:object="${contactForm}" th:action="@{save}" method="POST">
+            Facebook : <input type="text" th:field="*{facebook}"/><br>
+            Id : <input type="text" th:field="*{id}"/><br>
+            Instagram : <input type="text" th:field="*{instagram}"/><br>
+            linkedin : <input type="text" th:field="*{linkedin}"/><br>
+            phone : <input type="text" th:field="*{phone}"/><br>
+            <input type="submit" value="Update" name="Update"/>
+
+        </form>
+
+        <br><br>
         <table border="1">
-                <thead>
-                    <tr>
-                        <th>Id</th>
-                        <th>PHONE</th>
-                        <th>INSTAGRAM</th>
-                        <th>LINKEDIN</th>
-                        <th>FACEBOOK</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr th:each="as : ${contact}">
-                        <td th:text="${as.id}"></td>
-                        <td th:text="${as.phone}"></td>
-                        <td th:text="${as.instagram}"></td>
-                        <td th:text="${as.linkedin}"></td>
-                        <td th:text="${as.facebook}"></td>
-                    </tr>
-                </tbody>
-            </table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>PHONE</th>
+                    <th>INSTAGRAM</th>
+                    <th>LINKEDIN</th>
+                    <th>FACEBOOK</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="as : ${contact}">
+                    <td th:text="${as.id}"></td>
+                    <td th:text="${as.phone}"></td>
+                    <td th:text="${as.instagram}"></td>
+                    <td th:text="${as.linkedin}"></td>
+                    <td th:text="${as.facebook}"></td>
+                </tr>
+            </tbody>
+        </table>
     </body>
 </html>

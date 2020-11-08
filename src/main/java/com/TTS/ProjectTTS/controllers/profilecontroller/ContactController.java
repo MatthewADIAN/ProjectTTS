@@ -27,25 +27,22 @@ public class ContactController {
     @Autowired
     ContactService service;
     
-    @GetMapping("/{id}")
-    public String index(Model model, @PathVariable("id") String id){
-        model.addAttribute("contact",service.getById(id));
+
+    @GetMapping("")
+    public String index(Model model) {
+        model.addAttribute("contactForm", new Contact());
         return "contact";
     }
-    
-    /*
+
+    @PostMapping("save")
+    public String save(Contact contact) {
+        service.saveContact(contact);
+        return "redirect:/contact";
+    }
     @GetMapping("/{id}")
-    public String index(Model model, @PathVariable("id") String id){
+    public String getById(Model model, @PathVariable("id") String id) {
+        model.addAttribute("contactForm", new Contact());
         model.addAttribute("contact", service.getById(id));
-        return "index";
+        return "contact";
     }
-    */
-    /*
-    @PostMapping("register")
-    public String save(Register register){
-        service.register(register);
-        System.out.println(service.register(register));
-        return "redirect:/";
-    }
-    */
 }

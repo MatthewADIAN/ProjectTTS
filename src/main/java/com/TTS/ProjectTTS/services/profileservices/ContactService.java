@@ -35,5 +35,15 @@ public class ContactService {
         result = restTemplate.getForObject(uri + "/profile/contact/{id}", Contact.class, param);
         return result;
     }
+    
+    public boolean saveContact(Contact contact) {
+        boolean result = true;
+        try {
+            restTemplate.postForObject(uri + "/profile/contact", contact, Contact.class);
+        } catch (Exception e) {
+            result = false;
+        }
+        return result;
+    }
 
 }
