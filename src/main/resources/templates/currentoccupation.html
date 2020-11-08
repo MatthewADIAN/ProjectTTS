@@ -11,6 +11,18 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
+        
+        <form th:object="${occupationForm}" th:action="@{save}" method="POST">
+            CurrentCompany : <input type="text" th:field="*{currentCompany}"/><br>
+            Id : <input type="text" th:field="*{id}"/><br>
+            Job : <input type="text" th:field="*{job}"/><br>
+            Website : <input type="text" th:field="*{website}"/><br>
+            <input type="submit" value="Update" name="Update"/>
+
+        </form>
+        
+        <br><br>
+        
         <table border="1">
             <thead>
                 <tr>

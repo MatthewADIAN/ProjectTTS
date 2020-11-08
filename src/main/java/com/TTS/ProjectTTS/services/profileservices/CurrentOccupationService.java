@@ -32,4 +32,15 @@ public class CurrentOccupationService {
                 CurrentOccupation.class, param);
         return result;
     }
+    
+    public boolean saveOccupation(CurrentOccupation occupation) {
+        boolean result = true;
+        try {
+            restTemplate.postForObject(uri + "/profile/currentoccupation", occupation
+                    , CurrentOccupation.class);
+        } catch (Exception e) {
+            result = false;
+        }
+        return result;
+    }
 }

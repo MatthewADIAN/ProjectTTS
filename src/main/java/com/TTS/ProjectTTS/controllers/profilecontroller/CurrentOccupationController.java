@@ -5,12 +5,14 @@
  */
 package com.TTS.ProjectTTS.controllers.profilecontroller;
 
+import com.TTS.ProjectTTS.entities.CurrentOccupation;
 import com.TTS.ProjectTTS.services.profileservices.CurrentOccupationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
@@ -23,8 +25,22 @@ public class CurrentOccupationController {
     @Autowired
     CurrentOccupationService service;
 
+
+    @GetMapping("")
+    public String index(Model model) {
+        model.addAttribute("occupationForm", new CurrentOccupation());
+        return "currentoccupation";
+    }
+
+    @PostMapping("save")
+    public String save(CurrentOccupation occupation) {
+        service.saveOccupation(occupation);
+        return "redirect:/currentoccupation";
+    }
+    
     @GetMapping("/{id}")
-    public String index(Model model, @PathVariable("id") String id) {
+    public String getById(Model model, @PathVariable("id") String id) {
+        model.addAttribute("occupationForm", new CurrentOccupation());
         model.addAttribute("occupation", service.getById(id));
         return "currentoccupation";
     }
