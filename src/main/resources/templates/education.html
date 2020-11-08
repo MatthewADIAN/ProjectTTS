@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>MAJOR</th>
+                    <th>UNIVERSITY</th>
+                    <th>DEGREE</th>
+                    <th>ID</th>
+                    <th>STATUS</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="as : ${education}">
+                    <td th:text="${as.major}"></td>
+                    <td th:text="${as.university}"></td>
+                    <td th:text="${as.degree}"></td>
+                    <td th:text="${as.id}"></td>
+                    <td th:text="${as.status}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>
