@@ -31,4 +31,14 @@ public class AddressService {
         result = restTemplate.getForObject(uri + "/profile/address/{id}", Address.class, param);
         return result;
     }
+    
+    public boolean saveAddress(Address address) {
+        boolean result = true;
+        try {
+            restTemplate.postForObject(uri + "/profile/address", address, Address.class);
+        } catch (Exception e) {
+            result = false;
+        }
+        return result;
+    }
 }

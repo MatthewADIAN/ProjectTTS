@@ -32,7 +32,6 @@ public class RegisterController {
     @PostMapping("register")
     public String save(Register register){
         service.register(register);
-        System.out.println(service.register(register));
         return "redirect:/";
     }
 }

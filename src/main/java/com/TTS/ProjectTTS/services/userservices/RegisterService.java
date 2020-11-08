@@ -27,8 +27,8 @@ public class RegisterService {
     @Value("${api.uri}")
     private String uri;
 
-    public Boolean register(Register register) {
-        Boolean result = true;
+    public boolean register(Register register) {
+        boolean result = true;
         try {
             restTemplate.postForObject(uri + "/register", register, Register.class);
         } catch (Exception e) {
