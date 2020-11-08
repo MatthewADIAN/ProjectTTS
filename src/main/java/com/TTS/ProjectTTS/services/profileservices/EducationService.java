@@ -31,4 +31,14 @@ public class EducationService {
         result = restTemplate.getForObject(uri + "/profile/education/{id}", Education.class, param);
         return result;
     }
+    
+    public boolean saveEducation(Education education) {
+        boolean result = true;
+        try {
+            restTemplate.postForObject(uri + "/profile/education", education, Education.class);
+        } catch (Exception e) {
+            result = false;
+        }
+        return result;
+    }
 }
