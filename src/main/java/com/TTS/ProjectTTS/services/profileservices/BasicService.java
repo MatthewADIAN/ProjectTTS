@@ -31,4 +31,14 @@ public class BasicService {
         result = restTemplate.getForObject(uri + "/profile/basic/{id}", Basic.class, param);
         return result;
     }
+    
+    public boolean saveBasic(Basic basic) {
+        boolean result = true;
+        try {
+            restTemplate.postForObject(uri + "/profile/basic", basic, Basic.class);
+        } catch (Exception e) {
+            result = false;
+        }
+        return result;
+    }
 }
