@@ -11,6 +11,7 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
+        <div th:replace="fragments/sourceTambahan"></div>
         <form th:object="${user}" th:action="@{register}" method="POST">
             Birth Date : <input type="text" th:field="*{birthDate}"/><br>
             Current Company : <input type="text" th:field="*{currentCompany}"/><br>

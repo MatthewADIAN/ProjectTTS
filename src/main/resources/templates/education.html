@@ -11,6 +11,7 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
+        <div th:replace="fragments/sourceTambahan"></div>
         <form th:object="${educationForm}" th:action="@{save}" method="POST">
             Degree : <input type="text" th:field="*{degree}"/><br>
             Id : <input type="text" th:field="*{id}"/><br>
