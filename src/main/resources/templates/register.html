@@ -6,27 +6,157 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>Register</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
         <div th:replace="fragments/sourceTambahan"></div>
-        <form th:object="${user}" th:action="@{register}" method="POST">
-            Birth Date : <input type="text" th:field="*{birthDate}"/><br>
-            Current Company : <input type="text" th:field="*{currentCompany}"/><br>
-            Degree : <input type="text" th:field="*{degree}"/><br>
-            Email : <input type="text" th:field="*{email}"/><br>
-            Gender : <input type="text" th:field="*{gender}"/><br>
-            Job : <input type="text" th:field="*{job}"/><br>
-            Major : <input type="text" th:field="*{major}"/><br>
-            Name : <input type="text" th:field="*{name}"/><br>
-            Password : <input type="password" th:field="*{password}"/><br>
-            Phone : <input type="text" th:field="*{phone}"/><br>
-            Status : <input type="text" th:field="*{status}"/><br>
-            University : <input type="text" th:field="*{university}"/><br>
-            Username : <input type="text" th:field="*{username}"/><br>
-            <input type="submit" value="Register" name="Register" onclick="registerNotification()" />
-        </form>
+        <nav class="navbar navbar-light bg-light fixed-top">
+            <a class="navbar-brand" href="#">Metrodata Website</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/}">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link">Register</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Profile
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" th:href="@{/address}">Address</a>
+                            <a class="dropdown-item" th:href="@{/basic}">Basic</a>
+                            <a class="dropdown-item" th:href="@{/contact}">Contact</a>
+                            <a class="dropdown-item" th:href="@{/currentoccupation}">Current Occupation</a>
+                            <a class="dropdown-item" th:href="@{/education}">Education</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <br><br><br>
+        <div class="container-fluid">
+            <form th:object="${user}" th:action="@{register}" method="POST">
+
+                <div class="row">
+                    <div class="col-md-1">
+                        <label for="birth">Birth Date :</label> 
+                    </div>
+                    <div class="col-md-11">
+                        <input type="text" th:field="*{birthDate}" id="birth"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-1">
+                        <label for="company">Current Company :</label> 
+                    </div>
+                    <div class="col-md-11">
+                        <input type="text" th:field="*{currentCompany}" id="company"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-1">
+                        <label for="company" id="degree">Degree : </label> 
+                    </div>
+                    <div class="col-md-11">
+                        <input type="text" th:field="*{degree}" id="degree"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-1">
+                        <label for="company" id="email">Email : </label> 
+                    </div>
+                    <div class="col-md-11">
+                        <input type="text" th:field="*{email}" id="email"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-1">
+                        <label for="company" id="gender">Gender :  </label> 
+                    </div>
+                    <div class="col-md-11">
+                        <input type="text" th:field="*{gender}" id="gender"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-1">
+                        <label for="company" id="job">Job :  </label> 
+                    </div>
+                    <div class="col-md-11">
+                        <input type="text" th:field="*{job}" id="job"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-1">
+                        <label for="company" id="major">Major :   </label> 
+                    </div>
+                    <div class="col-md-11">
+                        <input type="text" th:field="*{major}" id="major"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-1">
+                        <label for="company" id="name">Name :    </label> 
+                    </div>
+                    <div class="col-md-11">
+                        <input type="text" th:field="*{name}" id="name"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-1">
+                        <label for="company" id="password">Password :     </label> 
+                    </div>
+                    <div class="col-md-11">
+                        <input type="password" th:field="*{password}" id="password"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-1">
+                        <label for="company" id="phone">Phone : </label> 
+                    </div>
+                    <div class="col-md-11">
+                        <input type="text" th:field="*{phone}" id="phone"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-1">
+                        <label for="company" id="status">Status :  </label> 
+                    </div>
+                    <div class="col-md-11">
+                        <input type="text" th:field="*{status}" id="status"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-1">
+                        <label for="company" id="university">University :   </label> 
+                    </div>
+                    <div class="col-md-11">
+                        <input type="text" th:field="*{university}" id="university"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-1">
+                        <label for="company" id="username">Username :    </label> 
+                    </div>
+                    <div class="col-md-11">
+                        <input type="text" th:field="*{username}" id="username"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <input type="submit" value="Register" name="Register" onclick="registerNotification()" />
+                    </div>
+                </div>
+
+            </form>
+        </div>
+
     </body>
 </html>
