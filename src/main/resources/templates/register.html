@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <form th:object="${user}" th:action="@{register}" method="POST">
+            Birth Date : <input type="text" th:field="*{birthDate}"/><br>
+            Current Company : <input type="text" th:field="*{currentCompany}"/><br>
+            Degree : <input type="text" th:field="*{degree}"/><br>
+            Email : <input type="text" th:field="*{email}"/><br>
+            Gender : <input type="text" th:field="*{gender}"/><br>
+            Job : <input type="text" th:field="*{job}"/><br>
+            Major : <input type="text" th:field="*{major}"/><br>
+            Name : <input type="text" th:field="*{name}"/><br>
+            Password : <input type="password" th:field="*{password}"/><br>
+            Phone : <input type="text" th:field="*{phone}"/><br>
+            Status : <input type="text" th:field="*{status}"/><br>
+            University : <input type="text" th:field="*{university}"/><br>
+            Username : <input type="text" th:field="*{username}"/><br>
+            <input type="submit" value="Register" name="Register" onclick="registerNotification()" />
+        </form>
+    </body>
+</html>

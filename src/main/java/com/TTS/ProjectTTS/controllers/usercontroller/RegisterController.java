@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @author USER
  */
 
+@RequestMapping("/register")
 @Controller
 public class RegisterController {
     @Autowired
@@ -26,12 +27,12 @@ public class RegisterController {
     @GetMapping("")
     public String index(Model model){
         model.addAttribute("user", new Register());
-        return "index";
+        return "register";
     }
     
     @PostMapping("register")
     public String save(Register register){
         service.register(register);
-        return "redirect:/";
+        return "redirect:/register";
     }
 }
