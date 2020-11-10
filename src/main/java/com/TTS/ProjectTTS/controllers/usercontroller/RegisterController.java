@@ -30,7 +30,7 @@ public class RegisterController {
         return "register";
     }
     
-    @PostMapping("register")
+    @PostMapping("registerData")
     public String save(Register register){
         service.register(register);
         return "redirect:/register";
