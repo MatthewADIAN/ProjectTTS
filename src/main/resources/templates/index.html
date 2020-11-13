@@ -11,7 +11,7 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     </head>
-    <body>
+    <body style="background-color: #C7AC92">
         <div th:replace="fragments/sourceTambahan"></div>
         <nav class="navbar navbar-light bg-light fixed-top">
             <a class="navbar-brand">Metrodata Website</a>
@@ -42,10 +42,21 @@ and open the template in the editor.
                 </ul>
             </div>
         </nav>
-        <br><br><br>
+        <br><br><br><br><br><br>
+        
+        
+        <div class="card w-50">
+            <div class="card-body">
+                <h5 class="card-title">Selamat Datang Di Website Kami</h5>
+                <p class="card-text">Disini Para programmer full stack berkumpul</p>
+                <a class="btn btn-info" th:href="@{/login}" role="button">Login</a>
+            </div>
+        </div>
+        
+        
 
-    <center><img src="https://www.homecareinsight.co.uk/wp-content/uploads/2020/07/connected-technology.jpg"
-                 width="200" height="200" style="margin-top: 10px;"/></center>
-    
-</body>
+
+
+
+    </body>
 </html>
