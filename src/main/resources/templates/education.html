@@ -10,7 +10,7 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
-    <body>
+    <body style="background-color: #C7AC92">
         <div th:replace="fragments/sourceTambahan"></div>
         <nav class="navbar navbar-light bg-light fixed-top">
             <a class="navbar-brand">Metrodata Website</a>
@@ -43,13 +43,44 @@ and open the template in the editor.
         </nav>
         <br><br><br>
         <form th:object="${educationForm}" th:action="@{save}" method="POST">
-            Degree : <input type="text" th:field="*{degree}"/><br>
-            Id : <input type="text" th:field="*{id}"/><br>
-            Major : <input type="text" th:field="*{major}"/><br>
-            Status : <input type="text" th:field="*{status}"/><br>
-            University : <input type="text" th:field="*{university}"/><br>
-            <input type="submit" value="Update" name="Update"/>
-
+            <div class="row">
+                <div class="col-md-1">
+                    <label for="city">Degree :</label> 
+                </div>
+                <div class="col-md-11">
+                    <input type="text" th:field="*{degree}"/>
+                </div>
+                <div class="col-md-1">
+                    <label for="city">Id :</label> 
+                </div>
+                <div class="col-md-11">
+                    <input type="text" th:field="*{id}"/>
+                </div>
+                <div class="col-md-1">
+                    <label for="city">Major :</label> 
+                </div>
+                <div class="col-md-11">
+                    <input type="text" th:field="*{status}"/>
+                </div>
+                <div class="col-md-1">
+                    <label for="city">Status :</label> 
+                </div>
+                <div class="col-md-11">
+                    <input type="text" th:field="*{status}"/>
+                </div>
+                <div class="col-md-1">
+                    <label for="city">University :</label> 
+                </div>
+                <div class="col-md-11">
+                    <input type="text" th:field="*{university}"/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <input type="submit" value="Update" name="Update"/>
+                </div>
+            </div>
+           
         </form>
 
         <br><br>

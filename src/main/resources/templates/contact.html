@@ -10,9 +10,9 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
-    <body>
+    <body style="background-color: #C7AC92">
         <div th:replace="fragments/sourceTambahan"></div>
-        
+
         <nav class="navbar navbar-light bg-light fixed-top">
             <a class="navbar-brand">Metrodata Website</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -44,12 +44,45 @@ and open the template in the editor.
         </nav>
         <br><br><br>
         <form th:object="${contactForm}" th:action="@{save}" method="POST">
-            Facebook : <input type="text" th:field="*{facebook}"/><br>
-            Id : <input type="text" th:field="*{id}"/><br>
-            Instagram : <input type="text" th:field="*{instagram}"/><br>
-            linkedin : <input type="text" th:field="*{linkedin}"/><br>
-            phone : <input type="text" th:field="*{phone}"/><br>
-            <input type="submit" value="Update" name="Update"/>
+            <div class="row">
+                <div class="col-md-1">
+                    <label for="city">Facebook :</label> 
+                </div>
+                <div class="col-md-11">
+                    <input type="text" th:field="*{facebook}"/>
+                </div>
+                <div class="col-md-1">
+                    <label for="city">Id :</label> 
+                </div>
+                <div class="col-md-11">
+                    <input type="text" th:field="*{id}"/><br>
+                </div>
+                <div class="col-md-1">
+                    <label for="city">Instagram :</label> 
+                </div>
+                <div class="col-md-11">
+                    <input type="text" th:field="*{instagram}"/>
+                </div>
+                <div class="col-md-1">
+                    <label for="city">Linkedin :</label> 
+                </div>
+                <div class="col-md-11">
+                    <input type="text" th:field="*{linkedin}"/>
+                </div>
+                <div class="col-md-1">
+                    <label for="city">Phone :</label> 
+                </div>
+                <div class="col-md-11">
+                    <input type="text" th:field="*{phone}"/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <input type="submit" value="Update" name="Update"/>
+                </div>
+            </div>
+
+
 
         </form>
 

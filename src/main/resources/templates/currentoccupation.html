@@ -10,9 +10,9 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
-    <body>
+    <body style="background-color: #C7AC92">
         <div th:replace="fragments/sourceTambahan"></div>
-        
+
         <nav class="navbar navbar-light bg-light fixed-top">
             <a class="navbar-brand">Metrodata Website</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -44,16 +44,42 @@ and open the template in the editor.
         </nav>
         <br><br><br>
         <form th:object="${occupationForm}" th:action="@{save}" method="POST">
-            CurrentCompany : <input type="text" th:field="*{currentCompany}"/><br>
-            Id : <input type="text" th:field="*{id}"/><br>
-            Job : <input type="text" th:field="*{job}"/><br>
-            Website : <input type="text" th:field="*{website}"/><br>
-            <input type="submit" value="Update" name="Update"/>
+            <div class="row">
+                <div class="col-md-1">
+                    <label for="city">CurrentCompany :</label> 
+                </div>
+                <div class="col-md-11">
+                    <input type="text" th:field="*{currentCompany}"/>
+                </div>
+                <div class="col-md-1">
+                    <label for="city">Id :</label> 
+                </div>
+                <div class="col-md-11">
+                    <input type="text" th:field="*{id}"/>
+                </div>
+                <div class="col-md-1">
+                    <label for="city">Job :</label> 
+                </div>
+                <div class="col-md-11">
+                    <input type="text" th:field="*{job}"/>
+                </div>
+                <div class="col-md-1">
+                    <label for="city">Website :</label> 
+                </div>
+                <div class="col-md-11">
+                    <input type="text" th:field="*{website}"/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <input type="submit" value="Update" name="Update"/>
+                </div>
+            </div>
 
         </form>
-        
+
         <br><br>
-        
+
         <table border="1">
             <thead>
                 <tr>
