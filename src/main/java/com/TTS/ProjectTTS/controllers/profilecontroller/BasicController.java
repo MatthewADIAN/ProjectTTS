@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  *
@@ -38,9 +39,9 @@ public class BasicController {
     }
     
     
-    @GetMapping("/{id}")
-    public String getById(Model model, @PathVariable("id") String id) {
-        model.addAttribute("basicForm", new Basic());
+    @GetMapping(path="/get")
+    public String getById(Model model, @RequestParam String id) {
+        model.addAttribute("basicForm", service.getById(id));
         model.addAttribute("basic", service.getById(id));
         return "basic";
     }

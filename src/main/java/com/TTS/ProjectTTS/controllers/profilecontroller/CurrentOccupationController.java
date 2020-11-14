@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  *
@@ -38,9 +39,9 @@ public class CurrentOccupationController {
         return "redirect:/currentoccupation";
     }
     
-    @GetMapping("/{id}")
-    public String getById(Model model, @PathVariable("id") String id) {
-        model.addAttribute("occupationForm", new CurrentOccupation());
+    @GetMapping(path="/get")
+    public String getById(Model model, @RequestParam String id) {
+        model.addAttribute("occupationForm", service.getById(id));
         model.addAttribute("occupation", service.getById(id));
         return "currentoccupation";
     }

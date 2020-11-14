@@ -95,7 +95,10 @@ and open the template in the editor.
 
         </form>
         <br><br>
-
+        <form action="/basic/get" method="get">
+            <label>Id : </label><input type="text" id="id" name="id"> 
+            <button class="btn btn-secondary">Search </button>
+        </form>
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Show Data</button>
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">

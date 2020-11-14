@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  *
@@ -37,9 +38,9 @@ public class EducationController {
         return "redirect:/education";
     }
     
-    @GetMapping("/{id}")
-    public String getById(Model model, @PathVariable("id") String id) {
-        model.addAttribute("educationForm", new Education());
+    @GetMapping(path="/get")
+    public String getById(Model model,  @RequestParam String id) {
+        model.addAttribute("educationForm", service.getById(id));
         model.addAttribute("education", service.getById(id));
         return "education";
     }
