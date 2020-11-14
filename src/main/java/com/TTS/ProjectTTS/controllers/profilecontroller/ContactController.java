@@ -5,8 +5,6 @@
  */
 package com.TTS.ProjectTTS.controllers.profilecontroller;
 
-import com.TTS.ProjectTTS.entities.Register;
-import com.TTS.ProjectTTS.services.userservices.RegisterService;
 import com.TTS.ProjectTTS.entities.Contact;
 import com.TTS.ProjectTTS.services.profileservices.ContactService;
 import org.springframework.beans.factory.annotation.Autowired;

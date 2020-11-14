@@ -79,10 +79,13 @@ and open the template in the editor.
                 </div>
                 <div class="row">
                     <div class="col-md-1">
-                        <label for="gender" id="gender">Gender :  </label> 
+                        <label for="genderLabel" id="genderLabel">Gender :  </label> 
                     </div>
                     <div class="col-md-11">
-                        <input type="text" th:field="*{gender}" id="gender"/>
+                        <select th:field="*{gender}" id="genderLabel">
+                            <option value="Laki-laki">Laki-Laki</option>
+                            <option value="Perempuan">Perempuan</option>
+                        </select>
                     </div>
                 </div>
                 <div class="row">
@@ -157,6 +160,6 @@ and open the template in the editor.
 
             </form>
         </div>
-        
+
     </body>
 </html>
