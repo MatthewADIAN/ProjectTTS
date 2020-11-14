@@ -8,3 +8,23 @@ function registerNotification() {
     });
 }
 
+function loginNotification() {
+    Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Login success',
+        showConfirmButton: false,
+        timer: 1500
+    });
+}
+
+function updateNotification() {
+    Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Update success',
+        showConfirmButton: false,
+        timer: 1500
+    });
+}
+

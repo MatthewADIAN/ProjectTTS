@@ -9,6 +9,11 @@ and open the template in the editor.
         <title>Address</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                overflow-x: hidden; 
+            }
+        </style>
     </head>
     <body style="background-color: #C7AC92">
         <div th:replace="fragments/sourceTambahan"></div>
@@ -42,7 +47,7 @@ and open the template in the editor.
             </div>
         </nav>
         <br><br><br>
-        <form th:object="${addressForm}" th:action="@{save}" method="POST">
+        <form th:object="${addressForm}" th:action="@{/address/save}" method="POST">
             <div class="row">
                 <div class="col-md-1">
                     <label for="city">City :</label> 
@@ -83,7 +88,7 @@ and open the template in the editor.
             </div>
             <div class="row">
                 <div class="col">
-                    <input type="submit" value="Update" name="Update"/>
+                    <input type="submit" value="Update" name="Update" class="btn btn-secondary" onclick="updateNotification()"/>
                 </div>
             </div>     
 
@@ -109,7 +114,7 @@ and open the template in the editor.
 
         </form>
         -->
-        
+
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Show Data</button>
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">

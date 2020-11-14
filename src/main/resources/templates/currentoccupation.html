@@ -48,7 +48,7 @@ and open the template in the editor.
             </div>
         </nav>
         <br><br><br>
-        <form th:object="${occupationForm}" th:action="@{save}" method="POST">
+        <form th:object="${occupationForm}" th:action="@{/currentoccupation/save}" method="POST">
             <div class="row">
                 <div class="col-md-2">
                     <label for="city">CurrentCompany :</label> 
@@ -77,7 +77,7 @@ and open the template in the editor.
             </div>
             <div class="row">
                 <div class="col">
-                    <input type="submit" value="Update" name="Update" class="btn btn-secondary"/>
+                    <input type="submit" value="Update" name="Update" class="btn btn-secondary" onclick="updateNotification()"/>
                 </div>
             </div>
 

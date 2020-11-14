@@ -49,7 +49,7 @@ and open the template in the editor.
             </div>
         </nav>
         <br><br><br>
-        <form th:object="${basicForm}" th:action="@{save}" method="POST">
+        <form th:object="${basicForm}" th:action="@{/basic/save}" method="POST">
 
             <div class="row">
                 <div class="col-md-1">
@@ -86,7 +86,7 @@ and open the template in the editor.
             </div>
             <div class="row">
                 <div class="col">
-                    <input type="submit" value="Update" name="Update" class="btn btn-secondary"/>
+                    <input type="submit" value="Update" name="Update" class="btn btn-secondary" onclick="updateNotification()"/>
                 </div>
             </div>
 
