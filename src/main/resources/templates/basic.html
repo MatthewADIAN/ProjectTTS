@@ -49,51 +49,45 @@ and open the template in the editor.
             </div>
         </nav>
         <br><br><br>
-        <form th:object="${basicForm}" th:action="@{/basic/save}" method="POST">
-
-            <div class="row">
-                <div class="col-md-1">
-                    <label for="city">Birth Date :</label> 
+        <div class="container ml-n1">
+            <form th:object="${basicForm}" th:action="@{/basic/save}" method="POST">
+                <div class="form-group row">
+                    <label for="inputBirth" class="col-sm-2 col-form-label">Birth Date</label>
+                    <div class="col-sm-3">
+                        <input type="text" th:field="*{birthDate}" class="form-control" id="inputBirth" placeholder="Birth Date">
+                    </div>
                 </div>
-                <div class="col-md-11">
-                    <input type="text" th:field="*{birthDate}"/>
+                <div class="form-group row">
+                    <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
+                    <div class="col-sm-3">
+                        <input type="text" th:field="*{email}" class="form-control" id="inputEmail" placeholder="Email">
+                    </div>
                 </div>
-                <div class="col-md-1">
-                    <label for="city">Email :</label> 
+                <div class="form-group row">
+                    <label for="inputGender" class="col-sm-2 col-form-label">Gender</label>
+                    <div class="col-sm-3">
+                        <input type="text" th:field="*{gender}" class="form-control" id="inputGender" placeholder="Gender">
+                    </div>
                 </div>
-                <div class="col-md-11">
-                    <input type="text" th:field="*{email}"/>
+                <div class="form-group row">
+                    <label for="inputId" class="col-sm-2 col-form-label">Id</label>
+                    <div class="col-sm-3">
+                        <input type="text" th:field="*{id}" class="form-control" id="inputId" placeholder="Id">
+                    </div>
                 </div>
-                <div class="col-md-1">
-                    <label for="city">Gender :</label> 
+                <div class="form-group row">
+                    <label for="inputName" class="col-sm-2 col-form-label">Name</label>
+                    <div class="col-sm-3">
+                        <input type="text" th:field="*{name}" class="form-control" id="inputName" placeholder="Name">
+                    </div>
                 </div>
-                <div class="col-md-11">
-                    <input type="text" th:field="*{gender}"/>
-                </div>
-                <div class="col-md-1">
-                    <label for="city">Id :</label> 
-                </div>
-                <div class="col-md-11">
-                    <input type="text" th:field="*{id}"/>
-                </div>
-                <div class="col-md-1">
-                    <label for="city">Name :</label> 
-                </div>
-                <div class="col-md-11">
-                    <input type="text" th:field="*{name}"/>
-                </div>
-
-            </div>
-            <div class="row">
-                <div class="col">
-                    <input type="submit" value="Update" name="Update" class="btn btn-secondary" onclick="updateNotification()"/>
-                </div>
-            </div>
-
-
-
-
-        </form>
+                <div class="form-group row">
+                    <div class="col-sm-10 offset-xs-1">
+                        <button type="submit" class="btn btn-primary">Update</button>
+                    </div>
+                </div> 
+            </form>
+        </div>
         <br><br>
         <form action="/basic/get" method="get">
             <label>Id : </label><input type="text" id="id" name="id"> 

@@ -47,52 +47,57 @@ and open the template in the editor.
             </div>
         </nav>
         <br><br><br>
+
+        <div class="container ml-n1">
         <form th:object="${addressForm}" th:action="@{/address/save}" method="POST">
-            <div class="row">
-                <div class="col-md-1">
-                    <label for="city">City :</label> 
-                </div>
-                <div class="col-md-11">
-                    <input type="text" th:field="*{city}"/>
-                </div>
-                <div class="col-md-1">
-                    <label for="city">Id :</label> 
-                </div>
-                <div class="col-md-11">
-                    <input type="text" th:field="*{id}"/>
-                </div>
-                <div class="col-md-1">
-                    <label for="city">Province :</label> 
-                </div>
-                <div class="col-md-11">
-                    <input type="text" th:field="*{province}"/>
-                </div>
-                <div class="col-md-1">
-                    <label for="city">Street 1 :</label> 
-                </div>
-                <div class="col-md-11">
-                    <input type="text" th:field="*{street1}"/>
-                </div>
-                <div class="col-md-1">
-                    <label for="city">Street 2 :</label> 
-                </div>
-                <div class="col-md-11">
-                    <input type="text" th:field="*{street2}"/>
-                </div>
-                <div class="col-md-1">
-                    <label for="city">zipCode :</label> 
-                </div>
-                <div class="col-md-11">
-                    <input type="text" th:field="*{zipCode}"/><br>
+            <div class="form-group row">
+                <label for="inputCity" class="col-sm-1 col-form-label">City</label>
+                <div class="col-sm-3">
+                    <input type="text" th:field="*{city}" class="form-control" id="inputCity" placeholder="City">
                 </div>
             </div>
-            <div class="row">
-                <div class="col">
-                    <input type="submit" value="Update" name="Update" class="btn btn-secondary" onclick="updateNotification()"/>
+            <div class="form-group row">
+                <label for="inputId" class="col-sm-1 col-form-label">Id</label>
+                <div class="col-sm-3">
+                    <input type="text" th:field="*{id}" class="form-control" id="inputId" placeholder="Id">
                 </div>
-            </div>     
-
+            </div>
+            <div class="form-group row">
+                <label for="inputProvince" class="col-sm-1 col-form-label">Province</label>
+                <div class="col-sm-3">
+                    <input type="text" th:field="*{province}" class="form-control" id="inputProvince" placeholder="Province">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputStreet1" class="col-sm-1 col-form-label">Street1</label>
+                <div class="col-sm-3">
+                    <input type="text" th:field="*{street1}" class="form-control" id="inputStreet1" placeholder="Street1">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputStreet2" class="col-sm-1 col-form-label">Street2</label>
+                <div class="col-sm-3">
+                    <input type="text" th:field="*{street2}" class="form-control" id="inputStreet2" placeholder="Street2">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputzipCode" class="col-sm-1 col-form-label">Zip Code</label>
+                <div class="col-sm-3">
+                    <input type="text" th:field="*{zipCode}" class="form-control" id="inputzipCode" placeholder="Zip Code">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-10 offset-xs-1">
+                    <button type="submit" class="btn btn-primary">Update</button>
+                </div>
+            </div>
         </form>
+        </div>
+        <br>
+
+
+
+
         <br><br>
         <form action="/address/get" method="get">
             <label>Id : </label><input type="text" id="id" name="id"> 

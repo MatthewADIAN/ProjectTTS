@@ -10,7 +10,7 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
-    <body style="background-color: #C7AC92">
+    <body style="background-color: #C7AC92; margin-bottom: 100px;" >
         <div th:replace="fragments/sourceTambahan"></div>
         <nav class="navbar navbar-light bg-light fixed-top">
             <a class="navbar-brand" href="#">Metrodata Website</a>
@@ -44,120 +44,92 @@ and open the template in the editor.
         <br><br><br>
         <div class="container-fluid">
             <form th:object="${user}" th:action="@{/register/registerData}" method="POST">
-
-                <div class="row">
-                    <div class="col-md-1">
-                        <label for="birth">Birth Date :</label> 
-                    </div>
-                    <div class="col-md-11">
-                        <input type="text" th:field="*{birthDate}" id="birth"/>
+                <div class="form-group row">
+                    <label for="inputBirth" class="col-sm-1 col-form-label">Birth Date</label>
+                    <div class="col-sm-3">
+                        <input type="text" th:field="*{birthDate}" class="form-control" id="inputBirth" placeholder="Birth Date">
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-1">
-                        <label for="company">Current Company :</label> 
-                    </div>
-                    <div class="col-md-11">
-                        <input type="text" th:field="*{currentCompany}" id="company"/>
+                <div class="form-group row">
+                    <label for="inputCompany" class="col-sm-1 col-form-label">Current Company</label>
+                    <div class="col-sm-3">
+                        <input type="text" th:field="*{currentCompany}" class="form-control" id="inputCompany" placeholder="Current Company">
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-1">
-                        <label for="degrees" id="degree">Degree : </label> 
-                    </div>
-                    <div class="col-md-11">
-                        <input type="text" th:field="*{degree}" id="degrees"/>
+                <div class="form-group row">
+                    <label for="inputDegree" class="col-sm-1 col-form-label">Degree</label>
+                    <div class="col-sm-3">
+                        <input type="text" th:field="*{degree}" class="form-control" id="inputDegree" placeholder="Degree">
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-1">
-                        <label for="emails" id="email">Email : </label> 
-                    </div>
-                    <div class="col-md-11">
-                        <input type="text" th:field="*{email}" id="emails"/>
+                <div class="form-group row">
+                    <label for="inputEmail" class="col-sm-1 col-form-label">Email</label>
+                    <div class="col-sm-3">
+                        <input type="text" th:field="*{email}" class="form-control" id="inputEmail" placeholder="Email">
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-1">
-                        <label for="genderLabel" id="genderLabel">Gender :  </label> 
-                    </div>
-                    <div class="col-md-11">
-                        <select th:field="*{gender}" id="genderLabel">
+                <div class="form-group row">
+                    <label for="inputGender" class="col-sm-1 col-form-label">Gender</label>
+                    <div class="col-sm-3">
+                        <select th:field="*{gender}" id="inputGender" class="form-control">
                             <option value="Laki-laki">Laki-Laki</option>
                             <option value="Perempuan">Perempuan</option>
                         </select>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-1">
-                        <label for="job" id="job">Job :  </label> 
-                    </div>
-                    <div class="col-md-11">
-                        <input type="text" th:field="*{job}" id="job"/>
+                <div class="form-group row">
+                    <label for="inputJob" class="col-sm-1 col-form-label">Job</label>
+                    <div class="col-sm-3">
+                        <input type="text" th:field="*{job}" class="form-control" id="inputJob" placeholder="Job">
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-1">
-                        <label for="major" id="major">Major :   </label> 
-                    </div>
-                    <div class="col-md-11">
-                        <input type="text" th:field="*{major}" id="major"/>
+                <div class="form-group row">
+                    <label for="inputMajor" class="col-sm-1 col-form-label">Major</label>
+                    <div class="col-sm-3">
+                        <input type="text" th:field="*{major}" class="form-control" id="inputMajor" placeholder="Major">
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-1">
-                        <label for="name" id="name">Name :    </label> 
-                    </div>
-                    <div class="col-md-11">
-                        <input type="text" th:field="*{name}" id="name"/>
+                <div class="form-group row">
+                    <label for="inputName" class="col-sm-1 col-form-label">Name</label>
+                    <div class="col-sm-3">
+                        <input type="text" th:field="*{name}" class="form-control" id="inputName" placeholder="Name">
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-1">
-                        <label for="password" id="password">Password :     </label> 
-                    </div>
-                    <div class="col-md-11">
-                        <input type="password" th:field="*{password}" id="password"/>
+                <div class="form-group row">
+                    <label for="inputPassword" class="col-sm-1 col-form-label">Password</label>
+                    <div class="col-sm-3">
+                        <input type="password" th:field="*{password}" class="form-control" id="inputPassword" placeholder="Password">
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-1">
-                        <label for="phone" id="phone">Phone : </label> 
-                    </div>
-                    <div class="col-md-11">
-                        <input type="text" th:field="*{phone}" id="phone"/>
+                <div class="form-group row">
+                    <label for="inputPhone" class="col-sm-1 col-form-label">Phone</label>
+                    <div class="col-sm-3">
+                        <input type="text" th:field="*{phone}" class="form-control" id="inputPhone" placeholder="Phone">
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-1">
-                        <label for="status" id="status">Status :  </label> 
-                    </div>
-                    <div class="col-md-11">
-                        <input type="text" th:field="*{status}" id="status"/>
+                <div class="form-group row">
+                    <label for="inputStatus" class="col-sm-1 col-form-label">Status</label>
+                    <div class="col-sm-3">
+                        <input type="text" th:field="*{status}" class="form-control" id="inputStatus" placeholder="Status">
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-1">
-                        <label for="university" id="university">University :   </label> 
-                    </div>
-                    <div class="col-md-11">
-                        <input type="text" th:field="*{university}" id="university"/>
+                <div class="form-group row">
+                    <label for="inputUniversity" class="col-sm-1 col-form-label">University</label>
+                    <div class="col-sm-3">
+                        <input type="text" th:field="*{university}" class="form-control" id="inputUniversity" placeholder="University">
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-1">
-                        <label for="username" id="username">Username :    </label> 
-                    </div>
-                    <div class="col-md-11">
-                        <input type="text" th:field="*{username}" id="username"/>
+                <div class="form-group row">
+                    <label for="inputUsername" class="col-sm-1 col-form-label">Username</label>
+                    <div class="col-sm-3">
+                        <input type="text" th:field="*{username}" class="form-control" id="inputUsername" placeholder="Username">
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col">
-                        <input type="submit" value="Register" name="Register" class="btn btn-info" onclick="registerNotification()" />
+                <div class="form-group row">
+                    <div class="col-sm-10 offset-xs-1">
+                        <button type="submit" class="btn btn-primary">Register</button>
                     </div>
                 </div>
-
             </form>
         </div>
 

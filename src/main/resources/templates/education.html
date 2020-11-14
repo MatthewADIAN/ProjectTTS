@@ -47,47 +47,45 @@ and open the template in the editor.
             </div>
         </nav>
         <br><br><br>
-        <form th:object="${educationForm}" th:action="@{/education/save}" method="POST">
-            <div class="row">
-                <div class="col-md-1">
-                    <label for="city">Degree :</label> 
+        <div class="container ml-n1">
+            <form th:object="${educationForm}" th:action="@{/education/save}" method="POST">
+                <div class="form-group row">
+                    <label for="inputDegree" class="col-sm-1 col-form-label">Degree</label>
+                    <div class="col-sm-3">
+                        <input type="text" th:field="*{degree}" class="form-control" id="inputDegree" placeholder="Degree">
+                    </div>
                 </div>
-                <div class="col-md-11">
-                    <input type="text" th:field="*{degree}"/>
+                <div class="form-group row">
+                    <label for="inputId" class="col-sm-1 col-form-label">Id</label>
+                    <div class="col-sm-3">
+                        <input type="text" th:field="*{id}" class="form-control" id="inputId" placeholder="Id">
+                    </div>
                 </div>
-                <div class="col-md-1">
-                    <label for="city">Id :</label> 
+                <div class="form-group row">
+                    <label for="inputMajor" class="col-sm-1 col-form-label">Major</label>
+                    <div class="col-sm-3">
+                        <input type="text" th:field="*{major}" class="form-control" id="inputMajor" placeholder="Major">
+                    </div>
                 </div>
-                <div class="col-md-11">
-                    <input type="text" th:field="*{id}"/>
+                <div class="form-group row">
+                    <label for="inputStatus" class="col-sm-1 col-form-label">Status</label>
+                    <div class="col-sm-3">
+                        <input type="text" th:field="*{status}" class="form-control" id="inputStatus" placeholder="Status">
+                    </div>
                 </div>
-                <div class="col-md-1">
-                    <label for="city">Major :</label> 
+                <div class="form-group row">
+                    <label for="inputUniversity" class="col-sm-1 col-form-label">University</label>
+                    <div class="col-sm-3">
+                        <input type="text" th:field="*{university}" class="form-control" id="inputUniversity" placeholder="University">
+                    </div>
                 </div>
-                <div class="col-md-11">
-                    <input type="text" th:field="*{major}"/>
+                <div class="form-group row">
+                    <div class="col-sm-10 offset-xs-1">
+                        <button type="submit" class="btn btn-primary">Update</button>
+                    </div>
                 </div>
-                <div class="col-md-1">
-                    <label for="city">Status :</label> 
-                </div>
-                <div class="col-md-11">
-                    <input type="text" th:field="*{status}"/>
-                </div>
-                <div class="col-md-1">
-                    <label for="city">University :</label> 
-                </div>
-                <div class="col-md-11">
-                    <input type="text" th:field="*{university}"/>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <input type="submit" value="Update" name="Update" class="btn btn-secondary" onclick="updateNotification()"/>
-                </div>
-            </div>
-
-        </form>
-
+            </form>
+        </div>
         <br><br>
         <form action="/education/get" method="get">
             <label>Id : </label><input type="text" id="id" name="id"> 
