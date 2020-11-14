@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  *
@@ -38,9 +39,9 @@ public class AddressController {
         return "redirect:/address";
     }
 
-    @GetMapping("/{id}")
-    public String getById(Model model, @PathVariable("id") String id) {
-        model.addAttribute("addressForm", new Address());
+    @GetMapping(path="/add")
+    public String getById(Model model, @RequestParam String id) {
+        model.addAttribute("addressForm", service.getById(id));
         model.addAttribute("address", service.getById(id));
         return "address";
     }

@@ -94,31 +94,16 @@ and open the template in the editor.
 
         </form>
         <br><br>
-        <!--
-        <a href="user?id=${id}">Get User</a><br>
-        <form th:object="${addressForm}" th:action="@{/address/{id}}" method="POST">
-            <div class="row">
-                <div class="col-md-1">
-                    <label for="city">Id :</label> 
-                </div>
-                <div class="col-md-11">
-                    <input type="text" th:field="*{id}"/>
-                </div>
-
-            </div>
-            <div class="row">
-                <div class="col">
-                    <input type="submit" value="Update" name="Update"/>
-                </div>
-            </div>     
-
+        <form action="/address/add" method="get">
+            <label>Id : </label><input type="text" id="id" name="id"> 
+            <button class="btn btn-secondary">Search </button>
         </form>
-        -->
+
+
 
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Show Data</button>
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
-                <!--<form th:object="${addressForm}" th:action="@{/address/{id}}" method="POST">-->
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalLabel">Show Data</h5>
@@ -127,11 +112,6 @@ and open the template in the editor.
                         </button>
                     </div>
                     <div class="modal-body">
-                        <!--
-                        Id : <input type="text" th:field="*{id}"/>
-                        <input type="submit" value="Search" name="Search"/>
-                        -->
-
                         <table border="1">
                             <thead>
                                 <tr>
@@ -157,11 +137,8 @@ and open the template in the editor.
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-
                     </div>
-
                 </div>
-                <!--</form>-->
             </div>
         </div>
 
