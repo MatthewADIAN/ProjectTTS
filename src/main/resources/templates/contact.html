@@ -9,6 +9,11 @@ and open the template in the editor.
         <title>Contact</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                overflow-x: hidden; 
+            }
+        </style>
     </head>
     <body style="background-color: #C7AC92">
         <div th:replace="fragments/sourceTambahan"></div>
@@ -78,7 +83,7 @@ and open the template in the editor.
             </div>
             <div class="row">
                 <div class="col">
-                    <input type="submit" value="Update" name="Update"/>
+                    <input type="submit" value="Update" name="Update" class="btn btn-secondary"/>
                 </div>
             </div>
 

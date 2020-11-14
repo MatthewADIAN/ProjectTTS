@@ -9,6 +9,11 @@ and open the template in the editor.
         <title>Current Occupation</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                overflow-x: hidden; 
+            }
+        </style>
     </head>
     <body style="background-color: #C7AC92">
         <div th:replace="fragments/sourceTambahan"></div>
@@ -45,34 +50,34 @@ and open the template in the editor.
         <br><br><br>
         <form th:object="${occupationForm}" th:action="@{save}" method="POST">
             <div class="row">
-                <div class="col-md-1">
+                <div class="col-md-2">
                     <label for="city">CurrentCompany :</label> 
                 </div>
-                <div class="col-md-11">
+                <div class="col-md-10">
                     <input type="text" th:field="*{currentCompany}"/>
                 </div>
-                <div class="col-md-1">
+                <div class="col-md-2">
                     <label for="city">Id :</label> 
                 </div>
-                <div class="col-md-11">
+                <div class="col-md-10">
                     <input type="text" th:field="*{id}"/>
                 </div>
-                <div class="col-md-1">
+                <div class="col-md-2">
                     <label for="city">Job :</label> 
                 </div>
-                <div class="col-md-11">
+                <div class="col-md-10">
                     <input type="text" th:field="*{job}"/>
                 </div>
-                <div class="col-md-1">
+                <div class="col-md-2">
                     <label for="city">Website :</label> 
                 </div>
-                <div class="col-md-11">
+                <div class="col-md-10">
                     <input type="text" th:field="*{website}"/>
                 </div>
             </div>
             <div class="row">
                 <div class="col">
-                    <input type="submit" value="Update" name="Update"/>
+                    <input type="submit" value="Update" name="Update" class="btn btn-secondary"/>
                 </div>
             </div>
 
