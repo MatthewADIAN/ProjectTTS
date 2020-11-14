@@ -85,39 +85,81 @@ and open the template in the editor.
                 <div class="col">
                     <input type="submit" value="Update" name="Update"/>
                 </div>
-            </div>
-
-
-
-
-
-
-
-            
+            </div>     
 
         </form>
         <br><br>
-        <table border="1">
-            <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>Street1</th>
-                    <th>Street2</th>
-                    <th>City</th>
-                    <th>Province</th>
-                    <th>ZIPCODE</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr th:each="as : ${address}">
-                    <td th:text="${as.id}"></td>
-                    <td th:text="${as.street1}"></td>
-                    <td th:text="${as.street2}"></td>
-                    <td th:text="${as.city}"></td>
-                    <td th:text="${as.province}"></td>
-                    <td th:text="${as.zipCode}"></td>
-                </tr>
-            </tbody>
-        </table>
+        <!--
+        <a href="user?id=${id}">Get User</a><br>
+        <form th:object="${addressForm}" th:action="@{/address/{id}}" method="POST">
+            <div class="row">
+                <div class="col-md-1">
+                    <label for="city">Id :</label> 
+                </div>
+                <div class="col-md-11">
+                    <input type="text" th:field="*{id}"/>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col">
+                    <input type="submit" value="Update" name="Update"/>
+                </div>
+            </div>     
+
+        </form>
+        -->
+        
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Show Data</button>
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <!--<form th:object="${addressForm}" th:action="@{/address/{id}}" method="POST">-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Show Data</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!--
+                        Id : <input type="text" th:field="*{id}"/>
+                        <input type="submit" value="Search" name="Search"/>
+                        -->
+
+                        <table border="1">
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Street1</th>
+                                    <th>Street2</th>
+                                    <th>City</th>
+                                    <th>Province</th>
+                                    <th>ZIPCODE</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr th:each="as : ${address}">
+                                    <td th:text="${as.id}"></td>
+                                    <td th:text="${as.street1}"></td>
+                                    <td th:text="${as.street2}"></td>
+                                    <td th:text="${as.city}"></td>
+                                    <td th:text="${as.province}"></td>
+                                    <td th:text="${as.zipCode}"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                    </div>
+
+                </div>
+                <!--</form>-->
+            </div>
+        </div>
+
+
     </body>
 </html>

@@ -37,6 +37,7 @@ public class AddressController {
         service.saveAddress(address);
         return "redirect:/address";
     }
+
     @GetMapping("/{id}")
     public String getById(Model model, @PathVariable("id") String id) {
         model.addAttribute("addressForm", new Address());
