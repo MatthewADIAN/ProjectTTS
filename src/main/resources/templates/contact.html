@@ -87,25 +87,54 @@ and open the template in the editor.
         </form>
 
         <br><br>
-        <table border="1">
-            <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>PHONE</th>
-                    <th>INSTAGRAM</th>
-                    <th>LINKEDIN</th>
-                    <th>FACEBOOK</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr th:each="as : ${contact}">
-                    <td th:text="${as.id}"></td>
-                    <td th:text="${as.phone}"></td>
-                    <td th:text="${as.instagram}"></td>
-                    <td th:text="${as.linkedin}"></td>
-                    <td th:text="${as.facebook}"></td>
-                </tr>
-            </tbody>
-        </table>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Show Data</button>
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <!--<form th:object="${addressForm}" th:action="@{/address/{id}}" method="POST">-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Show Data</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!--
+                        Id : <input type="text" th:field="*{id}"/>
+                        <input type="submit" value="Search" name="Search"/>
+                        -->
+
+                        <table border="1">
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>PHONE</th>
+                                    <th>INSTAGRAM</th>
+                                    <th>LINKEDIN</th>
+                                    <th>FACEBOOK</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr th:each="as : ${contact}">
+                                    <td th:text="${as.id}"></td>
+                                    <td th:text="${as.phone}"></td>
+                                    <td th:text="${as.instagram}"></td>
+                                    <td th:text="${as.linkedin}"></td>
+                                    <td th:text="${as.facebook}"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                    </div>
+
+                </div>
+                <!--</form>-->
+            </div>
+        </div>
+
+
     </body>
 </html>
