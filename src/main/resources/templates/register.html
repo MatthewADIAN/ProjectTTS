@@ -43,29 +43,33 @@ and open the template in the editor.
         </nav>
         <br><br><br>
         <div class="container-fluid">
-            <form th:object="${user}" th:action="@{/register/registerData}" method="POST">
+            <form th:object="${user}" th:action="@{/register/registerData}" method="POST" class="needs-validation" novalidate>
                 <div class="form-group row">
                     <label for="inputBirth" class="col-sm-1 col-form-label">Birth Date</label>
                     <div class="col-sm-3">
-                        <input type="text" th:field="*{birthDate}" class="form-control" id="inputBirth" placeholder="Birth Date">
+                        <input type="text" th:field="*{birthDate}" class="form-control" id="inputBirth" placeholder="Birth Date" required>
+                        <div class="invalid-feedback">Please enter Birth Date field</div>
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="inputCompany" class="col-sm-1 col-form-label">Current Company</label>
                     <div class="col-sm-3">
-                        <input type="text" th:field="*{currentCompany}" class="form-control" id="inputCompany" placeholder="Current Company">
+                        <input type="text" th:field="*{currentCompany}" class="form-control" id="inputCompany" placeholder="Current Company" required>
+                        <div class="invalid-feedback">Please enter Current Company field</div>
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="inputDegree" class="col-sm-1 col-form-label">Degree</label>
                     <div class="col-sm-3">
-                        <input type="text" th:field="*{degree}" class="form-control" id="inputDegree" placeholder="Degree">
+                        <input type="text" th:field="*{degree}" class="form-control" id="inputDegree" placeholder="Degree" required>
+                        <div class="invalid-feedback">Please enter Degree field</div>
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="inputEmail" class="col-sm-1 col-form-label">Email</label>
                     <div class="col-sm-3">
-                        <input type="text" th:field="*{email}" class="form-control" id="inputEmail" placeholder="Email">
+                        <input type="email" th:field="*{email}" class="form-control" id="inputEmail" placeholder="Email" required>
+                        <div class="invalid-feedback">Please enter valid email</div>
                     </div>
                 </div>
                 <div class="form-group row">
@@ -80,49 +84,57 @@ and open the template in the editor.
                 <div class="form-group row">
                     <label for="inputJob" class="col-sm-1 col-form-label">Job</label>
                     <div class="col-sm-3">
-                        <input type="text" th:field="*{job}" class="form-control" id="inputJob" placeholder="Job">
+                        <input type="text" th:field="*{job}" class="form-control" id="inputJob" placeholder="Job" required>
+                        <div class="invalid-feedback">Please enter job field</div>
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="inputMajor" class="col-sm-1 col-form-label">Major</label>
                     <div class="col-sm-3">
-                        <input type="text" th:field="*{major}" class="form-control" id="inputMajor" placeholder="Major">
+                        <input type="text" th:field="*{major}" class="form-control" id="inputMajor" placeholder="Major" required>
+                        <div class="invalid-feedback">Please enter Major field</div>
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="inputName" class="col-sm-1 col-form-label">Name</label>
                     <div class="col-sm-3">
-                        <input type="text" th:field="*{name}" class="form-control" id="inputName" placeholder="Name">
+                        <input type="text" th:field="*{name}" class="form-control" id="inputName" placeholder="Name" required>
+                        <div class="invalid-feedback">Please enter Name field</div>
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="inputPassword" class="col-sm-1 col-form-label">Password</label>
                     <div class="col-sm-3">
-                        <input type="password" th:field="*{password}" class="form-control" id="inputPassword" placeholder="Password">
+                        <input type="password" th:field="*{password}" class="form-control" id="inputPassword" placeholder="Password" required>
+                        <div class="invalid-feedback">Please enter Password field</div>
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="inputPhone" class="col-sm-1 col-form-label">Phone</label>
                     <div class="col-sm-3">
-                        <input type="text" th:field="*{phone}" class="form-control" id="inputPhone" placeholder="Phone">
+                        <input type="text" th:field="*{phone}" class="form-control" id="inputPhone" placeholder="Phone" required>
+                        <div class="invalid-feedback">Please enter Phone field</div>
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="inputStatus" class="col-sm-1 col-form-label">Status</label>
                     <div class="col-sm-3">
-                        <input type="text" th:field="*{status}" class="form-control" id="inputStatus" placeholder="Status">
+                        <input type="text" th:field="*{status}" class="form-control" id="inputStatus" placeholder="Status" required>
+                        <div class="invalid-feedback">Please enter Status field</div>
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="inputUniversity" class="col-sm-1 col-form-label">University</label>
                     <div class="col-sm-3">
-                        <input type="text" th:field="*{university}" class="form-control" id="inputUniversity" placeholder="University">
+                        <input type="text" th:field="*{university}" class="form-control" id="inputUniversity" placeholder="University" required>
+                        <div class="invalid-feedback">Please enter University field</div>
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="inputUsername" class="col-sm-1 col-form-label">Username</label>
                     <div class="col-sm-3">
-                        <input type="text" th:field="*{username}" class="form-control" id="inputUsername" placeholder="Username">
+                        <input type="text" th:field="*{username}" class="form-control" id="inputUsername" placeholder="Username" required>
+                        <div class="invalid-feedback">Please enter Username field</div>
                     </div>
                 </div>
                 <div class="form-group row">
@@ -131,6 +143,9 @@ and open the template in the editor.
                     </div>
                 </div>
             </form>
+            
+
+
         </div>
 
     </body>

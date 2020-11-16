@@ -48,17 +48,19 @@ and open the template in the editor.
         </nav>
         <br><br><br>
         <div class="container ml-n1">
-            <form th:object="${loginForm}" th:action="@{/login/loginCheck}" method="POST">
+            <form th:object="${loginForm}" th:action="@{/login/loginCheck}" method="POST" class="needs-validation" novalidate>
                 <div class="form-group row">
                     <label for="inputEmail" class="col-sm-1 col-form-label">Email</label>
                     <div class="col-sm-3">
-                        <input type="text" th:field="*{email}" class="form-control" id="inputEmail" placeholder="Email">
+                        <input type="email" th:field="*{email}" class="form-control" id="inputEmail" placeholder="Email" required>
+                        <div class="invalid-feedback">Please enter a valid email address</div>
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="inputPassowrd" class="col-sm-1 col-form-label">Password</label>
                     <div class="col-sm-3">
-                        <input type="text" th:field="*{password}" class="form-control" id="inputPassword" placeholder="Password">
+                        <input type="password" th:field="*{password}" class="form-control" id="inputPassword" placeholder="Password" required>
+                        <div class="invalid-feedback">Please enter Password field</div>
                     </div>
                 </div>
                 <div class="form-group row">
