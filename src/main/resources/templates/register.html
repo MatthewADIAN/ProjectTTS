@@ -45,6 +45,34 @@ and open the template in the editor.
         <div class="container-fluid">
             <form th:object="${user}" th:action="@{/register/registerData}" method="POST" class="needs-validation" novalidate>
                 <div class="form-group row">
+                    <label for="inputUsername" class="col-sm-1 col-form-label">Username</label>
+                    <div class="col-sm-3">
+                        <input type="text" th:field="*{username}" class="form-control" id="inputUsername" placeholder="Username" required>
+                        <div class="invalid-feedback">Please enter Username field</div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputName" class="col-sm-1 col-form-label">Name</label>
+                    <div class="col-sm-3">
+                        <input type="text" th:field="*{name}" class="form-control" id="inputName" placeholder="Name" required>
+                        <div class="invalid-feedback">Please enter Name field</div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputPassword" class="col-sm-1 col-form-label">Password</label>
+                    <div class="col-sm-3">
+                        <input type="password" th:field="*{password}" class="form-control" id="inputPassword" placeholder="Password" required>
+                        <div class="invalid-feedback">Please enter Password field</div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputEmail" class="col-sm-1 col-form-label">Email</label>
+                    <div class="col-sm-3">
+                        <input type="email" th:field="*{email}" class="form-control" id="inputEmail" placeholder="Email" required>
+                        <div class="invalid-feedback">Please enter valid email</div>
+                    </div>
+                </div>
+                <div class="form-group row">
                     <label for="inputBirth" class="col-sm-1 col-form-label">Birth Date</label>
                     <div class="col-sm-3">
                         <input type="text" th:field="*{birthDate}" class="form-control" id="inputBirth" placeholder="Birth Date" required>
@@ -65,13 +93,7 @@ and open the template in the editor.
                         <div class="invalid-feedback">Please enter Degree field</div>
                     </div>
                 </div>
-                <div class="form-group row">
-                    <label for="inputEmail" class="col-sm-1 col-form-label">Email</label>
-                    <div class="col-sm-3">
-                        <input type="email" th:field="*{email}" class="form-control" id="inputEmail" placeholder="Email" required>
-                        <div class="invalid-feedback">Please enter valid email</div>
-                    </div>
-                </div>
+
                 <div class="form-group row">
                     <label for="inputGender" class="col-sm-1 col-form-label">Gender</label>
                     <div class="col-sm-3">
@@ -95,20 +117,8 @@ and open the template in the editor.
                         <div class="invalid-feedback">Please enter Major field</div>
                     </div>
                 </div>
-                <div class="form-group row">
-                    <label for="inputName" class="col-sm-1 col-form-label">Name</label>
-                    <div class="col-sm-3">
-                        <input type="text" th:field="*{name}" class="form-control" id="inputName" placeholder="Name" required>
-                        <div class="invalid-feedback">Please enter Name field</div>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="inputPassword" class="col-sm-1 col-form-label">Password</label>
-                    <div class="col-sm-3">
-                        <input type="password" th:field="*{password}" class="form-control" id="inputPassword" placeholder="Password" required>
-                        <div class="invalid-feedback">Please enter Password field</div>
-                    </div>
-                </div>
+
+
                 <div class="form-group row">
                     <label for="inputPhone" class="col-sm-1 col-form-label">Phone</label>
                     <div class="col-sm-3">
@@ -130,20 +140,14 @@ and open the template in the editor.
                         <div class="invalid-feedback">Please enter University field</div>
                     </div>
                 </div>
-                <div class="form-group row">
-                    <label for="inputUsername" class="col-sm-1 col-form-label">Username</label>
-                    <div class="col-sm-3">
-                        <input type="text" th:field="*{username}" class="form-control" id="inputUsername" placeholder="Username" required>
-                        <div class="invalid-feedback">Please enter Username field</div>
-                    </div>
-                </div>
+
                 <div class="form-group row">
                     <div class="col-sm-10 offset-xs-1">
                         <button type="submit" class="btn btn-primary">Register</button>
                     </div>
                 </div>
             </form>
-            
+
 
 
         </div>

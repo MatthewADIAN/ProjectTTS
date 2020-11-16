@@ -75,27 +75,6 @@ and open the template in the editor.
         <div class="container ml-4">
             <form th:object="${basicForm}" th:action="@{/basic/save}" method="POST" class="needs-validation" novalidate>
                 <div class="form-group row">
-                    <label for="inputBirth" class="col-sm-2 col-form-label">Birth Date</label>
-                    <div class="col-sm-3">
-                        <input type="text" th:field="*{birthDate}" class="form-control" id="inputBirth" placeholder="Birth Date" required>
-                        <div class="invalid-feedback">Please enter Birth Date field</div>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
-                    <div class="col-sm-3">
-                        <input type="email" th:field="*{email}" class="form-control" id="inputEmail" placeholder="Email" required>
-                        <div class="invalid-feedback">Please enter valid email address</div>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="inputGender" class="col-sm-2 col-form-label">Gender</label>
-                    <div class="col-sm-3">
-                        <input type="text" th:field="*{gender}" class="form-control" id="inputGender" placeholder="Gender" required>
-                        <div class="invalid-feedback">Please enter Gender field</div>
-                    </div>
-                </div>
-                <div class="form-group row">
                     <label for="inputId" class="col-sm-2 col-form-label">Id</label>
                     <div class="col-sm-3">
                         <input type="text" th:field="*{id}" class="form-control" id="inputId" placeholder="Id" required>
@@ -110,6 +89,32 @@ and open the template in the editor.
                     </div>
                 </div>
                 <div class="form-group row">
+                    <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
+                    <div class="col-sm-3">
+                        <input type="email" th:field="*{email}" class="form-control" id="inputEmail" placeholder="Email" required>
+                        <div class="invalid-feedback">Please enter valid email address</div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputBirth" class="col-sm-2 col-form-label">Birth Date</label>
+                    <div class="col-sm-3">
+                        <input type="text" th:field="*{birthDate}" class="form-control" id="inputBirth" placeholder="Birth Date" required>
+                        <div class="invalid-feedback">Please enter Birth Date field</div>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="inputGender" class="col-sm-2 col-form-label">Gender</label>
+                    <div class="col-sm-3">
+                        <select th:field="*{gender}" id="inputGender" class="form-control">
+                            <option value="Laki-laki">Laki-Laki</option>
+                            <option value="Perempuan">Perempuan</option>
+                        </select>
+                    </div>
+                </div>
+
+
+                <div class="form-group row">
                     <div class="col-sm-10 offset-xs-1">
                         <button type="submit" class="btn btn-primary">Update</button>
                     </div>
@@ -117,8 +122,8 @@ and open the template in the editor.
             </form>
         </div>
         <br><br>
-        
-        
+
+
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <!--<form th:object="${addressForm}" th:action="@{/address/{id}}" method="POST">-->
@@ -140,18 +145,18 @@ and open the template in the editor.
                                 <tr>
                                     <th>Id</th>
                                     <th>NAME</th>
+                                    <th>EMAIL</th>
                                     <th>BIRTHDATE</th>
                                     <th>GENDER</th>
-                                    <th>EMAIL</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr th:each="as : ${basic}">
                                     <td th:text="${as.id}"></td>
                                     <td th:text="${as.name}"></td>
+                                    <td th:text="${as.email}"></td>
                                     <td th:text="${as.birthDate}"></td>
                                     <td th:text="${as.gender}"></td>
-                                    <td th:text="${as.email}"></td>
                                 </tr>
                             </tbody>
                         </table>
