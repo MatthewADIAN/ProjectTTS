@@ -48,52 +48,70 @@ and open the template in the editor.
             </div>
         </nav>
         <br><br><br>
-        <div class="container ml-n1">
-        <form th:object="${contactForm}" th:action="@{/contact/save}" method="POST">
+        <div class="container ml-5">
             <div class="form-group row">
-                <label for="inputFacebook" class="col-sm-1 col-form-label">Facebook</label>
-                <div class="col-sm-3">
-                    <input type="text" th:field="*{facebook}" class="form-control" id="inputFacebook" placeholder="Facebook">
+                <div class="col-xs-5">
+                    Search For the Id
                 </div>
             </div>
             <div class="form-group row">
-                <label for="inputId" class="col-sm-1 col-form-label">Id</label>
-                <div class="col-sm-3">
-                    <input type="text" th:field="*{id}" class="form-control" id="inputId" placeholder="Id">
+                <div class="col-xs-5">
+                    <form action="/contact/get" method="get">
+                        <label for="idSearch">Id : </label><input type="text" id="idSearch" name="id"> 
+                        <button class="btn btn-secondary">Search </button>
+                    </form>
+
                 </div>
-            </div>
-            <div class="form-group row">
-                <label for="inputInstagram" class="col-sm-1 col-form-label">Instagram</label>
-                <div class="col-sm-3">
-                    <input type="text" th:field="*{instagram}" class="form-control" id="inputInstagram" placeholder="Instagram">
+                &nbsp;&nbsp;
+                <div class="col-xs-5">
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Show Data</button>
                 </div>
+
             </div>
-            <div class="form-group row">
-                <label for="inputLinkedin" class="col-sm-1 col-form-label">Linkedin</label>
-                <div class="col-sm-3">
-                    <input type="text" th:field="*{linkedin}" class="form-control" id="inputLinkedin" placeholder="Linkedin">
+
+        </div>
+        <br>
+        <div class="container ml-4">
+            <form th:object="${contactForm}" th:action="@{/contact/save}" method="POST">
+                <div class="form-group row">
+                    <label for="inputFacebook" class="col-sm-1 col-form-label">Facebook</label>
+                    <div class="col-sm-3">
+                        <input type="text" th:field="*{facebook}" class="form-control" id="inputFacebook" placeholder="Facebook">
+                    </div>
                 </div>
-            </div>
-            <div class="form-group row">
-                <label for="inputPhone" class="col-sm-1 col-form-label">Phone</label>
-                <div class="col-sm-3">
-                    <input type="text" th:field="*{phone}" class="form-control" id="inputPhone" placeholder="Phone">
+                <div class="form-group row">
+                    <label for="inputId" class="col-sm-1 col-form-label">Id</label>
+                    <div class="col-sm-3">
+                        <input type="text" th:field="*{id}" class="form-control" id="inputId" placeholder="Id">
+                    </div>
                 </div>
-            </div>
-            <div class="form-group row">
-                <div class="col-sm-10 offset-xs-1">
-                    <button type="submit" class="btn btn-primary">Update</button>
+                <div class="form-group row">
+                    <label for="inputInstagram" class="col-sm-1 col-form-label">Instagram</label>
+                    <div class="col-sm-3">
+                        <input type="text" th:field="*{instagram}" class="form-control" id="inputInstagram" placeholder="Instagram">
+                    </div>
                 </div>
-            </div>
-        </form>
+                <div class="form-group row">
+                    <label for="inputLinkedin" class="col-sm-1 col-form-label">Linkedin</label>
+                    <div class="col-sm-3">
+                        <input type="text" th:field="*{linkedin}" class="form-control" id="inputLinkedin" placeholder="Linkedin">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputPhone" class="col-sm-1 col-form-label">Phone</label>
+                    <div class="col-sm-3">
+                        <input type="text" th:field="*{phone}" class="form-control" id="inputPhone" placeholder="Phone">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-10 offset-xs-1">
+                        <button type="submit" class="btn btn-primary">Update</button>
+                    </div>
+                </div>
+            </form>
         </div>
         <br><br>
-        <form action="/contact/get" method="get">
-            <label>Id : </label><input type="text" id="id" name="id"> 
-            <button class="btn btn-secondary">Search </button>
-        </form>
 
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Show Data</button>
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <!--<form th:object="${addressForm}" th:action="@{/address/{id}}" method="POST">-->

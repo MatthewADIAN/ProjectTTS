@@ -48,7 +48,30 @@ and open the template in the editor.
             </div>
         </nav>
         <br><br><br>
-        <div class="container ml-n1">
+        <div class="container ml-5">
+            <div class="form-group row">
+                <div class="col-xs-5">
+                    Search For the Id
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-xs-5">
+                    <form action="/currentoccupation/get" method="get">
+                        <label for="idSearch">Id : </label><input type="text" id="idSearch" name="id"> 
+                        <button class="btn btn-secondary">Search </button>
+                    </form>
+
+                </div>
+                &nbsp;&nbsp;
+                <div class="col-xs-5">
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Show Data</button>
+                </div>
+
+            </div>
+
+        </div>
+        <br>
+        <div class="container ml-4">
             <form th:object="${occupationForm}" th:action="@{/currentoccupation/save}" method="POST">
 
                 <div class="form-group row">
@@ -83,11 +106,7 @@ and open the template in the editor.
             </form>
         </div>
         <br><br>
-        <form action="/currentoccupation/get" method="get">
-            <label>Id : </label><input type="text" id="id" name="id"> 
-            <button class="btn btn-secondary">Search </button>
-        </form>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Show Data</button>
+
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <!--<form th:object="${addressForm}" th:action="@{/address/{id}}" method="POST">-->
