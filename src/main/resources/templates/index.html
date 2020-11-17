@@ -9,7 +9,29 @@ and open the template in the editor.
         <title>Metrodata Website</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            .description{
+                position: absolute;
+                top: 30%;
+                margin: auto;
+                padding: 2em;
 
+            }
+            .description h1{
+                color:black ;
+            }
+            .description p{
+                color:#666;
+                font-size: 20px;
+                width: 50%;
+                line-height: 1.5;
+            }
+            #buttonLogin{
+                border:1px  solid #f3eee7;
+                background:#f3eee7;
+                color:black;
+            }
+        </style>
     </head>
     <body style="background-color: #C7AC92">
         <div th:replace="fragments/sourceTambahan"></div>
@@ -45,20 +67,16 @@ and open the template in the editor.
         <br><br><br><br><br><br>
 
 
-
-        <div class="card w-50">
-            <div class="card-body">
-                <h5 class="card-title">Selamat Datang Di Website Kami</h5>
-                <p class="card-text">Disini Para programmer full stack berkumpul</p>
-                <a class="btn btn-info" th:href="@{/login}" role="button">Login</a>
+        <div class="container">
+            <div class="description">
+                <h1>    Selamat Datang di Website Metrodata
+                    <p>    Website para full-stack programmer berkumpul
+                    </p>   
+                    <a class="btn btn-secondary btn-lg" th:href="@{/login}" role="button" id="buttonLogin">Login</a>   </h1>  
             </div>
+
         </div>
+       
 
-
-        <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80" width="200" height="200">
- 
-
-
-
-</body>
+    </body>
 </html>
